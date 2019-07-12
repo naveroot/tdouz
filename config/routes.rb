@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mail_group, only: :index
   resources :posts
   get 'spam/show'
   get 'landing/show'
