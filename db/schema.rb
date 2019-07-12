@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_12_113524) do
+ActiveRecord::Schema.define(version: 2019_07_12_122954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,30 @@ ActiveRecord::Schema.define(version: 2019_07_12_113524) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "mail_groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mail_groups_recipients", force: :cascade do |t|
+    t.bigint "mail_group_id"
+    t.bigint "recipient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mail_group_id"], name: "index_mail_groups_recipients_on_mail_group_id"
+    t.index ["recipient_id"], name: "index_mail_groups_recipients_on_recipient_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
