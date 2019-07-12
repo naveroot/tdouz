@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha&display=swap');
+
+header {
+  background-color: #f4f4f4;
+}
+
+h1 {
+  padding-top: 10px;
+  margin: 0;
+  color: #d0434a;
+  font-family: "Times New Roman";
+}
+.header_top {
+  background-color: #f4f4f4;
+  color: #d0434a;
+  padding: 10px;
+  font-family: 'Neucha', cursive;
+  text-align: center;
+}
+a.nav-link {
+  text-decoration: none;
+  color: inherit;
+  margin: 3px;
+  border-bottom: solid #f4f4f4;
+}
+
+a.nav-link:link {
+  color: #B00100;
+}
+
+a.nav-link:hover {
+  color: red;
+  border-bottom: solid #B00100;
+}
+
+a.nav-link:visited {
+  color: #B00100;
+}
