@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :mail_group, only: :index
+  resources :recipients, only: :show
+  resources :mail_groups, only: %i[index show] do
+    get :send_spam
+  end
+
   resources :posts
   get 'spam/show'
   get 'landing/show'

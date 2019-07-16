@@ -1,0 +1,10 @@
+tr
+  th scope='row' = mail_group.id
+  td = mail_group.name
+  td
+    = link_to 'Send to all', mail_group_send_spam_url(mail_group)
+    br
+    = link_to 'Show all recipients', mail_group_path(mail_group)
+tr class='hide'
+  td
+    =render 'mail_groups/recipients_list', recipients_list: mail_group.recipients
